@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using alpha_bar_service.Models;
+using alpha_bar_service.Services.Interface;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace alpha_bar_service.Controllers
@@ -7,19 +9,18 @@ namespace alpha_bar_service.Controllers
     [ApiController]
     public class ProductController : ControllerBase
     {
-        public ProductController() { }
-
-
-        public ActionResult Index() { }
-
-        public ActionResult Details() { 
-        
-        
-        
+        private IProductService productService;
+        public ProductController(IProductService _productService)
+        {
+            this.productService = _productService;
         }
-        public ActionResult Contact() { }
-        public ActionResult Error() { }
-        public ActionResult Error(string message) { }
 
+
+
+        [HttpGet]
+        public ActionResult Get(int ID)
+        {
+            return base.Ok( this.productService.GetProductDetails(ID).Result);
+        }
     }
 }

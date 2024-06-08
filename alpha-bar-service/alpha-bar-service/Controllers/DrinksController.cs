@@ -7,6 +7,7 @@ namespace alpha_bar_service.Controllers
     [ApiController]
     public class DrinksController : ControllerBase
     {
+        public DrinksController() { }
 
     }
 }
