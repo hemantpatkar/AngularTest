@@ -8,11 +8,10 @@ namespace alpha_bar_service.Repository
         private readonly List<Product_dto> ProductList;
         public ProductRepository()
         {
-
             ProductList = new List<Product_dto>
             {
-                new Product_dto { Product_ID = 1, Product_Name = "Milk" },
-                new Product_dto { Product_ID = 2, Product_Name = "Orange" }
+                new Product_dto { Product_ID = 1, Product_Name = "Milk" , Drink_Name="Milk Shake"},
+                new Product_dto { Product_ID = 2, Product_Name = "Orange" , Drink_Name = "Orange Juice" }
             };
         }
 

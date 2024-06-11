@@ -2,17 +2,19 @@ import { Component, Injectable, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { productservice } from './services/product.service';
 import { productdetails } from './models/productdetails';
+import { fascettracer } from './fascettracer.directive';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
+  imports: [RouterOutlet,fascettracer],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 
  
 export class AppComponent implements OnInit{
+
 
    result : string="Invalid Prod TP";
    drinks : string="Cannot Mix It";
@@ -43,4 +45,9 @@ onChange(str: String) {
   });
 }
  
+OnClick($event: MouseEvent) {
+  this.drinks = "Milk Shake";
+  }
+
+
 }

@@ -9,5 +9,8 @@ namespace alpha_bar_service.Models
 
         [MaxLength(100)]
         public string Product_Name { get; set; }
+
+        [MaxLength(100)]
+        public string Drink_Name { get; set; }
     }
 }
